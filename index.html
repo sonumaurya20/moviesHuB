@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover movies and TV series on MovieHub.">
+  <title>MovieHub | Discover Movies</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="index.html" class="logo">Movie<span>Hub</span></a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="#discover">Discover</a>
+      <a href="#discover" id="watchlistLink">My Watchlist</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">YOUR NEXT FAVORITE IS HERE</p>
+        <h1>Find your next <span>favorite movie.</span></h1>
+        <p class="hero-description">
+          Explore movies and series, discover new stories,
+          and save the ones you want to watch.
+        </p>
+
+        <form id="searchForm" class="search-form">
+          <input
+            type="search"
+            id="movieInput"
+            placeholder="Search movies or series..."
+            aria-label="Search movies or series"
+            required
+          >
+          <button type="submit" id="searchButton">Search</button>
+        </form>
+
+        <p class="search-hint">Try: Interstellar, Batman, Inception</p>
+      </div>
+    </section>
+
+    <section class="discover section" id="discover">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE THE COLLECTION</p>
+          <h2 id="sectionTitle">Popular Searches</h2>
+        </div>
+
+        <select id="sortSelect" aria-label="Sort movies">
+          <option value="default">Default order</option>
+          <option value="year-desc">Newest first</option>
+          <option value="year-asc">Oldest first</option>
+          <option value="title-asc">Title A–Z</option>
+        </select>
+      </div>
+
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="movie">Movies</button>
+        <button class="filter-btn" data-filter="series">Series</button>
+        <button class="filter-btn" data-filter="favorites">♥ Watchlist</button>
+      </div>
+
+      <p id="resultsMessage" class="results-message" aria-live="polite">
+        Loading movies...
+      </p>
+
+      <div id="movieHub" class="movie-grid"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="index.html" class="logo">Movie<span>Hub</span></a>
+    <p>Discover stories. Find your next favorite.</p>
+    <p class="copyright">Movie information provided by OMDb API.</p>
+  </footer>
+<script src="index.js"></script>
+</body>
+</html>

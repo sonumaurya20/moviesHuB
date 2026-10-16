@@ -1,0 +1,396 @@
+
+/* MOVIE DETAILS PAGE */
+
+.details-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at 80% 15%, #8b5cf61a, transparent 35%),
+        var(--bg);
+}
+
+.details-page .navbar {
+    min-height: 84px;
+}
+
+.back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 15px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: #e3d9ff;
+    background: #ffffff05;
+    font-size: 13px;
+    transition: 0.25s;
+}
+
+.back-home:hover {
+    background: #a78bfa18;
+    border-color: #a78bfa70;
+}
+
+.back-home span {
+    font-size: 18px;
+}
+
+.details-main {
+    width: min(1100px, 92%);
+    margin: auto;
+    padding: 25px 0 65px;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 42px;
+}
+
+.breadcrumb a {
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.breadcrumb span:nth-child(2) {
+    color: #66667b;
+}
+
+.details-heading {
+    text-align: center;
+    margin-bottom: 42px;
+}
+
+.details-heading h1 {
+    font: 800 clamp(36px, 5vw, 54px)/1.15 "Outfit", sans-serif;
+    letter-spacing: -1.8px;
+    margin: 15px 0 12px;
+}
+
+.details-heading h1 span {
+    color: var(--accent);
+}
+
+.details-heading > p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* MOVIE CARD CONTAINER */
+
+.movie-detail {
+    position: relative;
+    min-height: 250px;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 0% 0%, #8b5cf615, transparent 45%),
+        linear-gradient(135deg, #151520, #101018);
+    box-shadow: 0 25px 70px #0003;
+}
+
+.details-loading {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/*
+  These styles work when movie-details.js renders
+  .detail-layout, .detail-poster and .detail-info.
+*/
+
+.detail-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+    gap: 38px;
+    align-items: start;
+}
+
+.detail-poster {
+    width: 100%;
+    position: relative;
+}
+
+.detail-poster img {
+    display: block;
+    width: 100%;
+    max-height: 470px;
+    object-fit: cover;
+    aspect-ratio: 2 / 3;
+    border-radius: 15px;
+    border: 1px solid #ffffff20;
+    box-shadow: 0 20px 45px #0006;
+}
+
+.detail-info {
+    min-width: 0;
+    padding: 8px 0;
+}
+
+.detail-type {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 11px;
+    background: #a78bfa16;
+    border: 1px solid #a78bfa35;
+    border-radius: 7px;
+    color: #c4b5fd;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.detail-title {
+    font: 800 clamp(29px, 4vw, 43px)/1.16 "Outfit", sans-serif;
+    letter-spacing: -1.2px;
+    overflow-wrap: anywhere;
+    margin: 17px 0 12px;
+}
+
+.detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.detail-meta span + span::before {
+    content: "•";
+    color: var(--accent);
+    margin-right: 10px;
+}
+
+.detail-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    margin-top: 22px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid #fbbf2433;
+    background: #fbbf240c;
+    color: #fbbf24;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.detail-rating small {
+    color: var(--muted);
+    font-weight: 400;
+}
+
+.detail-plot {
+    color: #c0bfd0;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-top: 25px;
+}
+
+.detail-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+}
+
+.detail-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 25px;
+}
+
+.detail-fact {
+    min-width: 0;
+}
+
+.detail-fact h3 {
+    color: var(--muted);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    margin-bottom: 8px;
+}
+
+.detail-fact p {
+    color: #f0eef9;
+    font-size: 13px;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.detail-error {
+    padding: 40px 10px;
+    text-align: center;
+}
+
+.detail-error h2 {
+    font: 700 25px "Outfit", sans-serif;
+    margin-bottom: 12px;
+}
+
+.detail-error p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.detail-error a {
+    display: inline-block;
+    padding: 12px 17px;
+    border-radius: 10px;
+    background: var(--accent-strong);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* BUTTONS */
+
+.details-footer-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border: 1px solid #a78bfa55;
+    border-radius: 11px;
+    color: #e5dcff;
+    background: #a78bfa0c;
+    font-size: 13px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.back-button:hover {
+    background: #a78bfa20;
+    transform: translateY(-2px);
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+    .detail-layout {
+        grid-template-columns: minmax(180px, 250px) minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .movie-detail {
+        padding: 22px;
+    }
+
+    .detail-facts {
+        gap: 18px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .details-page .navbar {
+        min-height: 72px;
+    }
+
+    .back-home {
+        padding: 9px 10px;
+        gap: 5px;
+        font-size: 11px;
+    }
+
+    .details-main {
+        padding-top: 22px;
+    }
+
+    .breadcrumb {
+        margin-bottom: 30px;
+    }
+
+    .details-heading {
+        margin-bottom: 28px;
+    }
+
+    .details-heading h1 {
+        letter-spacing: -1px;
+    }
+
+    .details-heading > p {
+        font-size: 13px;
+    }
+
+    .movie-detail {
+        padding: 17px;
+        border-radius: 16px;
+    }
+
+    .detail-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+    }
+
+    .detail-poster {
+        width: min(100%, 260px);
+        margin: auto;
+    }
+
+    .detail-poster img {
+        max-height: none;
+    }
+
+    .detail-info {
+        padding-top: 0;
+    }
+
+    .detail-title {
+        font-size: 32px;
+    }
+
+    .detail-facts {
+        grid-template-columns: 1fr;
+        gap: 19px;
+    }
+
+    .details-footer-action {
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 360px) {
+    .back-home {
+        font-size: 10px;
+        padding: 8px;
+    }
+
+    .details-heading h1 {
+        font-size: 33px;
+    }
+
+    .movie-detail {
+        padding: 12px;
+    }
+
+    .detail-title {
+        font-size: 27px;
+    }
+}
